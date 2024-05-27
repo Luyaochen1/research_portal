@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .table-view-active {
+            border-color: #1D4ED8;
+            color: #1D4ED8;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-7xl mx-auto bg-white shadow-md rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">Search Results</h1>
+            <div>
+                <button class="px-4 py-2 border rounded-l-md">Card View</button>
+                <button class="px-4 py-2 border rounded-r-md table-view-active">Table View</button>
+            </div>
+        </div>
+        <p class="mb-4">Viewing 1-10 out of 3,318 studies</p>
+        <p class="mb-4">Showing results for: <strong>heart attack</strong></p>
+        <a href="#" class="text-blue-600 mb-4 inline-block">+ Synonyms of conditions or disease (17)</a>
+        <div class="flex mb-4">
+            <div class="w-1/4 pr-4">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <h2 class="text-lg font-semibold mb-4">Focus Your Search <span class="text-sm text-gray-500">(all filters optional)</span></h2>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-1" for="condition">Condition/disease</label>
+                        <input type="text" id="condition" class="w-full border rounded-md p-2" value="heart attack">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-1" for="other-terms">Other terms</label>
+                        <input type="text" id="other-terms" class="w-full border rounded-md p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-1" for="intervention">Intervention/treatment</label>
+                        <input type="text" id="intervention" class="w-full border rounded-md p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-1" for="location">Location</label>
+                        <input type="text" id="location" class="w-full border rounded-md p-2" placeholder="Search by address, city, state, or country">
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-sm font-medium mb-2">Study Status</h3>
+                        <div class="mb-2">
+                            <input type="checkbox" id="not-yet-recruiting" class="mr-2">
+                            <label for="not-yet-recruiting">Not yet recruiting (108)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="recruiting" class="mr-2">
+                            <label for="recruiting">Recruiting (445)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="active-not-recruiting" class="mr-2">
+                            <label for="active-not-recruiting">Active, not recruiting (131)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="completed" class="mr-2">
+                            <label for="completed">Completed (1,669)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="terminated" class="mr-2">
+                            <label for="terminated">Terminated (173)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="enrolling-by-invitation" class="mr-2">
+                            <label for="enrolling-by-invitation">Enrolling by invitation (27)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="suspended" class="mr-2">
+                            <label for="suspended">Suspended (15)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="withdrawn" class="mr-2">
+                            <label for="withdrawn">Withdrawn (90)</label>
+                        </div>
+                        <div class="mb-2">
+                            <input type="checkbox" id="unknown" class="mr-2">
+                            <label for="unknown">Unknown (657)</label>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" class="text-blue-600">Expanded access</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-3/4">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <button class="px-4 py-2 border rounded-md">None Selected</button>
+                        <button class="px-4 py-2 border rounded-md">Bookmark</button>
+                        <button class="px-4 py-2 border rounded-md">Share</button>
+                    </div>
+                    <div>
+                        <button class="px-4 py-2 border rounded-md">RSS</button>
+                        <button class="px-4 py-2 border rounded-md">Manage</button>
+                    </div>
+                </div>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-2">#</th>
+                            <th class="border p-2">Study Title</th>
+                            <th class="border p-2">NCT Number</th>
+                            <th class="border p-2">Status</th>
+                            <th class="border p-2">Conditions</th>
+                            <th class="border p-2">Interventions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">1</td>
+                            <td class="border p-2 text-blue-600"><a href="#">CARdioprotection in Myocardial Infarction</a></td>
+                            <td class="border p-2">NCT02967965</td>
+                            <td class="border p-2">Active, not recruiting</td>
+                            <td class="border p-2"><span class="text-yellow-600">Myocardial Infarct</span></td>
+                            <td class="border p-2">Other: Imagery</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">2</td>
+                            <td class="border p-2 text-blue-600"><a href="#">Rosuvastatin in Preventing Myonecrosis in Elective Percutaneous Coronary Interventions (PCIs)</a></td>
+                            <td class="border p-2">NCT01007279</td>
+                            <td class="border p-2 text-red-600">Completed</td>
+                            <td class="border p-2"><span class="text-yellow-600">Periprocedural Myocardial Necrosis</span></td>
+                            <td class="border p-2">Drug: ROSUVASTATIN</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">3</td>
+                            <td class="border p-2 text-blue-600"><a href="#">The Health Impact of High Intensity Exercise Training With Intervals During Cardiac Rehabilitation</a></td>
+                            <td class="border p-2">NCT02376244</td>
+                            <td class="border p-2 text-red-600">Completed</td>
+                            <td class="border p-2">
+                                <span class="text-yellow-600">Heart Disease</span><br>
+                                <span class="text-yellow-600">Heart Attacks</span>
+                            </td>
+                            <td class="border p-2">
+                                Other: High intensity interval training (HIIT)<br>
+                                Other: Standard care
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">4</td>
+                            <td class="border p-2 text-blue-600"><a href="#">Ilomedin Treatment for Patients Having Undergone Primary Percutaneous Coronary Intervention (PCI)</a></td>
+                            <td class="border p-2">NCT01179776</td>
+                            <td class="border p-2 text-red-600">Completed</td>
+                            <td class="border p-2"><span class="text-yellow-600">Myocardial Infarct</span></td>
+                            <td class="border p-2">
+                                Drug: Ilomedin<br>
+                                Drug: Placebo<br>
+                                Drug: Ilomedin
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">5</td>
+                            <td class="border p-2 text-blue-600"><a href="#">Safety and Tolerability of RNS60 Given by IV to Healthy Subjects</a></td>
+                            <td class="border p-2">NCT01264783</td>
+                            <td class="border p-2 text-red-600">Completed</td>
+                            <td class="border p-2"><span class="text-yellow-600">Myocardial Infarct</span></td>
+                            <td class="border p-2">Drug: RNS60<br>Drug: Placebo</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">6</td>
+                            <td class="border p-2 text-blue-600"><a href="#">Aspirin Resistance and Stroke Risk: Platelet Function Analysis in Patients With Ischemic Events</a></td>
+                            <td class="border p-2">NCT01586975</td>
+                            <td class="border p-2 text-red-600">Completed <span class="text-blue-600">WITH RESULTS</span></td>
+                            <td class="border p-2">
+                                <span class="text-yellow-600">Stroke</span><br>
+                                <span class="text-yellow-600">Myocardial Infarctions</span>
+                            </td>
+                            <td class="border p-2">
+                                Drug: Clopidogrel<br>
+                                Drug: Aspirin 81 mg<br>
+                                Drug: Aspirin >300 mg
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-100">
+                            <td class="border p-2">7</td>
+                            <td class="border p-2 text-blue-600"><a href="#">Intracoronary Injection of Epo After Myocardial Infarct "Intra-CO-EpoMI"</a></td>
+                            <td class="border p-2">NCT01043991</td>
+                            <td class="border p-2 text-red-600">Completed</td>
+                            <td class="border p-2"><span class="text-yellow-600">Acute Myocardial Infarct</span></td>
+                            <td class="border p-2">
+                                Drug: Darbepoetin alfa<br>
+                                Drug: Placebo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

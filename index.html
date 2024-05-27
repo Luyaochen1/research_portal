@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria Research Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .header-bg {
+            background: url('https://source.unsplash.com/1600x400/?abstract,technology') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <header id="site-header">
+        <!--#include virtual="header.html" -->
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <div id="search-content">
+            <div id="non-clinical-content">
+                <h1 class="text-2xl font-bold">Quick Search</h1>
+                <form id="quick-search-form" class="mt-2 flex">
+                    <input type="text" id="quick-search-input" placeholder="Search Nigeria Research Registry" class="p-2 rounded-l-md w-full">
+                    <button type="submit" class="bg-blue-600 p-2 rounded-r-md">Search</button>
+                </form>
+                <button id="advanced-search-toggle" class="mt-2 bg-yellow-500 p-2 rounded-md">Advanced Search</button>
+
+                <div id="advanced-search" class="bg-white p-4 rounded-md shadow-md mt-6 hidden">
+                    <h3 class="text-lg font-bold">Advanced Projects Search</h3>
+                    <form id="advanced-search-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <label for="funding-agency" class="block font-bold">Name of Funding Agency</label>
+                            <input type="text" id="funding-agency" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="grant-award-number" class="block font-bold">Grant Award Number (FGN-KIRCT)</label>
+                            <input type="text" id="grant-award-number" class="p-2 w-full border rounded-md" placeholder="FGN-KIRCT-XXXX">
+                        </div>
+                        <div>
+                            <label for="country" class="block font-bold">Country of Funding Agency</label>
+                            <input type="text" id="country" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="pi-name" class="block font-bold">Name of PI in Nigeria</label>
+                            <input type="text" id="pi-name" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="start-date" class="block font-bold">Beginning Date</label>
+                            <input type="date" id="start-date" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="end-date" class="block font-bold">End Date</label>
+                            <input type="date" id="end-date" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="facility-name" class="block font-bold">Name of Facility</label>
+                            <input type="text" id="facility-name" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="lga" class="block font-bold">Local Government Area</label>
+                            <input type="text" id="lga" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div>
+                            <label for="state" class="block font-bold">State</label>
+                            <select id="state" class="p-2 w-full border rounded-md">
+                                <option value="">Select a state</option>
+                                <option value="abia">Abia</option>
+                                <option value="adamawa">Adamawa</option>
+                                <option value="akwa-ibom">Akwa Ibom</option>
+                                <option value="anambra">Anambra</option>
+                                <option value="bauchi">Bauchi</option>
+                                <option value="bayelsa">Bayelsa</option>
+                                <option value="benue">Benue</option>
+                                <option value="borno">Borno</option>
+                                <option value="cross-river">Cross River</option>
+                                <option value="delta">Delta</option>
+                                <option value="ebonyi">Ebonyi</option>
+                                <option value="edo">Edo</option>
+                                <option value="ekiti">Ekiti</option>
+                                <option value="enugu">Enugu</option>
+                                <option value="gombe">Gombe</option>
+                                <option value="imo">Imo</option>
+                                <option value="jigawa">Jigawa</option>
+                                <option value="kaduna">Kaduna</option>
+                                <option value="kano">Kano</option>
+                                <option value="katsina">Katsina</option>
+                                <option value="kebbi">Kebbi</option>
+                                <option value="kogi">Kogi</option>
+                                <option value="kwara">Kwara</option>
+                                <option value="lagos">Lagos</option>
+                                <option value="nasarawa">Nasarawa</option>
+                                <option value="niger">Niger</option>
+                                <option value="ogun">Ogun</option>
+                                <option value="ondo">Ondo</option>
+                                <option value="osun">Osun</option>
+                                <option value="oyo">Oyo</option>
+                                <option value="plateau">Plateau</option>
+                                <option value="rivers">Rivers</option>
+                                <option value="sokoto">Sokoto</option>
+                                <option value="taraba">Taraba</option>
+                                <option value="yobe">Yobe</option>
+                                <option value="zamfara">Zamfara</option>
+                                <option value="fct">Federal Capital Territory</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="study-title" class="block font-bold">Study Title</label>
+                            <input type="text" id="study-title" class="p-2 w-full border rounded-md">
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <button type="reset" class="bg-gray-300 p-2 rounded-md">Reset</button>
+                                <button type="submit" class="bg-green-500 p-2 rounded-md ml-2">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="clinical-content" class="hidden">
+                <h1 class="text-2xl font-bold mb-4">FTN Research Study Registry (trials) is a place to learn about clinical studies in Nigeria.</h1>
+                <div class="bg-white shadow-md rounded p-6">
+                    <h2 class="text-xl font-bold mb-4">Focus Your Search <span class="text-sm text-gray-500">(all filters optional)</span></h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="condition" class="block text-gray-700 font-bold mb-2">Condition/disease</label>
+                            <input type="text" id="condition" name="condition" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="heart attack">
+                        </div>
+                        <div class="mb-4">
+                            <label for="other-terms" class="block text-gray-700 font-bold mb-2">Other terms</label>
+                            <input type="text" id="other-terms" name="other-terms" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="intervention" class="block text-gray-700 font-bold mb-2">Intervention/treatment</label>
+                            <input type="text" id="intervention" name="intervention" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="location" class="block text-gray-700 font-bold mb-2">Location</label>
+                            <input type="text" id="location" name="location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Search by address, city, state, or country and select from the dropdown list">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2">Study Status</label>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" id="all-studies" name="study-status" value="all" class="mr-2">
+                                <label for="all-studies" class="text-gray-700">All studies</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="recruiting-studies" name="study-status" value="recruiting" class="mr-2">
+                                <label for="recruiting-studies" class="text-gray-700">Recruiting and not yet recruiting studies</label>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <button type="button" class="text-blue-700 font-bold">More Filters +</button>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>This feature is still under construction</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="site-footer" class="bg-white text-center py-4 shadow">
+        <!-- Footer content from index.html goes here -->
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

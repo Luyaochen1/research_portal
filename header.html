@@ -1,0 +1,33 @@
+<header class="bg-gradient-to-r from-green-600 to-yellow-500 text-center py-8 shadow-lg mt-8">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+
+            <div class="text-left">
+                <h2 class="text-2xl font-bold text-white">Welcome to FGN Research Study Registry</h2>
+                <p class="mt-2 text-lg text-white">This portal allows users to search a repository of Nigeria-funded research projects and access publications and patents resulting from the funding.</p>
+                <div class="mt-4 space-x-2">
+                    <button id="guided-tour-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">Guided Tour</button>
+                    <!-- <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md">Feedback</button> -->
+                    <button id="home-button" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-md">Home</button>
+                </div>
+            </div>
+            <div id="search-type-container" class="hidden">
+                <!-- Search type selection content will be here -->
+                <div class="bg-yellow-600 p-6 rounded-lg shadow-lg mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold text-white">Select Search Type</h3>
+                    <div class="mt-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="search-type" value="non-clinical" class="form-radio text-yellow-300" checked>
+                            <span class="ml-2 text-white">Non-Clinical Trial</span>
+                        </label>
+                        <label class="inline-flex items-center ml-4">
+                            <input type="radio" name="search-type" value="clinical" class="form-radio text-yellow-300">
+                            <span class="ml-2 text-white">Clinical Trial</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
